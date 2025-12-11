@@ -12,6 +12,15 @@
   --brand-pink: #e5489a;
 }
 body { font-family: Arial, sans-serif; }
+
+/* Faded watermark logo for backgrounds */
+.watermark {
+  background-image: url('yrc-logo.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300px;
+  opacity: 0.1;
+}
 </style>
 </head>
 
@@ -44,7 +53,7 @@ body { font-family: Arial, sans-serif; }
 </header>
 
 <!-- HERO SECTION -->
-<section class="bg-[var(--brand-blue)] text-white py-20 px-6">
+<section class="bg-[var(--brand-blue)] text-white py-20 px-6 watermark">
   <div class="container mx-auto text-center max-w-3xl">
     <h2 class="text-5xl font-extrabold mb-6">Proper Yorkshire Support Delivered With Heart</h2>
     <p class="text-xl mb-8">
@@ -59,22 +68,27 @@ body { font-family: Arial, sans-serif; }
 
 <!-- ABOUT US -->
 <section id="about" class="container mx-auto px-6 py-20">
-  <div class="bg-[var(--brand-pink)] text-white p-10 rounded-2xl shadow-lg leading-relaxed">
+  <div class="bg-[var(--brand-pink)] text-white p-10 rounded-2xl shadow-lg leading-relaxed watermark">
 
-    <h2 class="text-4xl font-bold mb-6">About Us</h2>
+    <h2 class="text-4xl font-bold mb-6 flex items-center justify-center">
+      <img src="yrc-logo.jpg" class="h-10 mr-3 opacity-80"> About Us
+    </h2>
 
     <p class="text-lg mb-4">
-      Yorkshire Rose Care was founded with a passion to bring real Yorkshire values into the care sector.
-      Compassion, resilience, honesty and community spirit shape everything we do.
+      Yorkshire Rose Care was founded to bring genuine Yorkshire values into the care sector.
+      Compassion, resilience, honesty and community spirit shape everything we do. We believe
+      in providing care that feels personal, warm and grounded in respect and dignity.
     </p>
 
     <p class="text-lg mb-4">
-      We support adults with mental health needs and learning disabilities across West Yorkshire.
-      Our focus is on helping people live safely, confidently and independently.
+      Working across West Yorkshire, we support adults with mental health needs and learning
+      disabilities to live independently, safely and confidently. Our staff are highly skilled,
+      trauma-informed and trained to deliver personalised support that adapts to each individual.
     </p>
 
     <p class="text-lg">
-      We are proud of the difference we make and proud to support people across Yorkshire.
+      We are proud to make a positive difference every day and proud to serve the people 
+      and communities of Yorkshire.
     </p>
 
   </div>
@@ -83,7 +97,10 @@ body { font-family: Arial, sans-serif; }
 <!-- VALUES -->
 <section id="values" class="bg-white py-20 px-6">
   <div class="container mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-12 text-[var(--brand-blue)]">Our Values</h2>
+
+    <h2 class="text-4xl font-bold text-center mb-12 text-[var(--brand-blue)] flex justify-center items-center">
+      <img src="yrc-logo.jpg" class="h-10 mr-3 opacity-70"> Our Values
+    </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
@@ -107,26 +124,64 @@ body { font-family: Arial, sans-serif; }
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="bg-[var(--brand-blue)] py-20 px-6 text-white">
+<section id="services" class="bg-[var(--brand-blue)] py-20 px-6 text-white watermark">
   <div class="container mx-auto">
 
-    <h2 class="text-4xl font-bold text-center mb-12">What We Offer</h2>
+    <h2 class="text-4xl font-bold text-center mb-12 flex justify-center items-center">
+      <img src="yrc-logo.jpg" class="h-10 mr-3 opacity-70"> What We Offer
+    </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
+      <!-- DOMICILIARY CARE -->
       <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)]">
-        <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-3">Domiciliary Care</h3>
-        <p>Support at home including daily living assistance, emotional support and independence focused care.</p>
+        <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4 flex items-center">
+          <img src="yrc-logo.jpg" class="h-8 mr-2 opacity-70"> Domiciliary Care
+        </h3>
+        <p class="mb-3">
+          Our domiciliary care service supports individuals in their own homes with day to day tasks,
+          emotional reassurance and practical help. We focus on maintaining independence wherever
+          possible, encouraging choice, control and confidence in everyday living.
+        </p>
+        <p>
+          Support can include assistance with routines, medication prompts, personal care, meal
+          preparation and companionship. All care is person centred and designed to promote wellbeing,
+          dignity and meaningful progress toward individual goals.
+        </p>
       </div>
 
+      <!-- SUPPORTED LIVING -->
       <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)]">
-        <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-3">Supported Living</h3>
-        <p>Structured support that promotes independence, confidence and community participation.</p>
+        <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4 flex items-center">
+          <img src="yrc-logo.jpg" class="h-8 mr-2 opacity-70"> Supported Living
+        </h3>
+        <p class="mb-3">
+          Our supported living service empowers individuals to live independently in a home of their own.
+          We provide structured, consistent support that enables people to develop life skills, improve
+          confidence and build meaningful connections within their community.
+        </p>
+        <p>
+          Support may include tenancy sustainment, budgeting skills, managing appointments, accessing
+          activities, community integration and emotional support. Our goal is to create a safe, stable
+          environment where individuals can thrive with the right level of care.
+        </p>
       </div>
 
+      <!-- SPECIALIST SUPPORT -->
       <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)]">
-        <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-3">Specialist Support</h3>
-        <p>Mental health support, community engagement and personalised care planning.</p>
+        <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4 flex items-center">
+          <img src="yrc-logo.jpg" class="h-8 mr-2 opacity-70"> Specialist Support
+        </h3>
+        <p class="mb-3">
+          Our specialist support focuses on mental health, learning disabilities and complex needs.
+          We use a compassionate, trauma informed approach designed to promote recovery, wellbeing
+          and independence.
+        </p>
+        <p>
+          This includes emotional regulation support, coping strategies, community access,
+          communication development, confidence building and personalised outcomes based work.
+          Every support plan is shaped around the person's strengths, aspirations and needs.
+        </p>
       </div>
 
     </div>
@@ -137,7 +192,9 @@ body { font-family: Arial, sans-serif; }
 <section id="testimonials" class="bg-white py-20 px-6">
   <div class="container mx-auto max-w-5xl text-center">
 
-    <h2 class="text-4xl font-bold text-[var(--brand-blue)] mb-12">Testimonials</h2>
+    <h2 class="text-4xl font-bold text-[var(--brand-blue)] mb-12 flex justify-center items-center">
+      <img src="yrc-logo.jpg" class="h-10 mr-3 opacity-70"> Testimonials
+    </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
@@ -145,7 +202,7 @@ body { font-family: Arial, sans-serif; }
       <div class="bg-[var(--brand-pink)] text-white p-8 rounded-2xl shadow-xl">
         <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
           <p class="text-lg italic font-semibold">
-            "Yorkshire Rose Care changed my life. The team supported me through a very difficult time and helped me feel confident again."
+            "Yorkshire Rose Care changed my life. The team helped me feel confident again and supported me through some very difficult moments."
           </p>
           <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
         </div>
@@ -156,7 +213,7 @@ body { font-family: Arial, sans-serif; }
       <div class="bg-[var(--brand-blue)] text-white p-8 rounded-2xl shadow-xl">
         <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
           <p class="text-lg italic font-semibold">
-            "The support workers are kind, patient and understanding. Nothing is too much trouble and they treat people with dignity and respect."
+            "The support workers are kind, patient and understanding. They treat people with dignity and always go the extra mile."
           </p>
           <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
         </div>
@@ -164,25 +221,25 @@ body { font-family: Arial, sans-serif; }
       </div>
 
       <!-- Testimonial 3 -->
-      <div class="bg-[var(--brand-blue)] text-white p-8 rounded-2xl shadow-xl">
-        <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
-          <p class="text-lg italic font-semibold">
-            "Professional, reliable and truly caring. Yorkshire Rose Care offer the best support service we have ever used."
-          </p>
-          <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
-        </div>
-        <p class="mt-6 font-bold text-xl">Local Authority Partner</p>
-      </div>
-
-      <!-- Testimonial 4 -->
       <div class="bg-[var(--brand-pink)] text-white p-8 rounded-2xl shadow-xl">
         <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
           <p class="text-lg italic font-semibold">
-            "Support that genuinely makes a difference. The team go the extra mile every day."
+            "Support that genuinely makes a difference. The team are reliable, friendly and committed to helping people improve their lives."
           </p>
           <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
         </div>
         <p class="mt-6 font-bold text-xl">Health Professional</p>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="bg-[var(--brand-blue)] text-white p-8 rounded-2xl shadow-xl">
+        <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
+          <p class="text-lg italic font-semibold">
+            "I feel safe and supported. Yorkshire Rose Care listen to me and help me take small steps toward independence."
+          </p>
+          <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
+        </div>
+        <p class="mt-6 font-bold text-xl">Service User</p>
       </div>
 
     </div>
@@ -191,7 +248,9 @@ body { font-family: Arial, sans-serif; }
 
 <!-- PARTNERS -->
 <section id="partners" class="container mx-auto px-6 py-20">
-  <h2 class="text-4xl font-bold text-[var(--brand-blue)] text-center mb-12">Our Partners</h2>
+  <h2 class="text-4xl font-bold text-[var(--brand-blue)] text-center mb-12 flex justify-center items-center">
+    <img src="yrc-logo.jpg" class="h-10 mr-3 opacity-70"> Our Partners
+  </h2>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
@@ -217,7 +276,7 @@ body { font-family: Arial, sans-serif; }
 
     <a href="https://andysmanclub.co.uk" target="_blank"
        class="p-8 rounded-2xl bg-[var(--brand-pink)] text-white font-bold text-xl shadow-xl text-center">
-       Andy’s Man Club
+       Andy's Man Club
     </a>
 
     <a href="https://www.premierleague.com/communities" target="_blank"
@@ -229,10 +288,12 @@ body { font-family: Arial, sans-serif; }
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="bg-[var(--brand-pink)] py-20 px-6 text-white">
+<section id="contact" class="bg-[var(--brand-pink)] py-20 px-6 text-white watermark">
   <div class="container mx-auto max-w-3xl">
 
-    <h2 class="text-4xl font-bold text-center mb-10">Contact Us</h2>
+    <h2 class="text-4xl font-bold text-center mb-10 flex justify-center items-center">
+      <img src="yrc-logo.jpg" class="h-10 mr-3 opacity-70"> Contact Us
+    </h2>
 
     <form action="https://formspree.io/f/xnnegodr" method="POST"
           class="bg-white text-gray-900 p-8 rounded-2xl shadow-xl border-4 border-[var(--brand-blue)]">
