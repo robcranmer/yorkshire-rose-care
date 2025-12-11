@@ -17,54 +17,49 @@
       scroll-behavior: smooth;
     }
 
-    /* Animations */
+    /* --- Animations --- */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(25px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-
+    @keyframes fadeInSmooth {
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
     @keyframes fadeIn {
       0% { opacity: 0; }
       100% { opacity: 1; }
     }
-
     @keyframes bounceIn {
-      0% { opacity: 0; transform: scale(0.8); }
-      60% { opacity: 1; transform: scale(1.06); }
+      0% { opacity: 0; transform: scale(0.85); }
+      60% { opacity: 1; transform: scale(1.05); }
       100% { transform: scale(1); }
     }
 
     .animate-title { animation: fadeInUp 1s ease-out forwards; }
     .animate-lead { animation: fadeIn 1.3s ease-out forwards; }
     .animate-btn { animation: bounceIn 1.5s ease-out forwards; }
+    .animate-fade { animation: fadeInSmooth 1.2s ease-out forwards; }
 
-    .nav-link {
-      transition: 0.25s ease;
-    }
+    .nav-link { transition: 0.25s ease; }
     .nav-link:hover {
       color: var(--brand-pink);
       transform: scale(1.07);
     }
 
-    .card-float {
-      transition: 0.3s ease;
-    }
+    .card-float { transition: 0.3s ease; }
     .card-float:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: 0 22px 35px rgba(0,0,0,0.22);
     }
 
-    .partner-card {
-      transition: 0.3s ease;
-    }
+    .partner-card { transition: 0.3s ease; }
     .partner-card:hover {
       transform: translateY(-6px) scale(1.03);
       box-shadow: 0 20px 35px rgba(0,0,0,0.25);
     }
 
-    .btn-main {
-      transition: 0.25s ease;
-    }
+    .btn-main { transition: 0.25s ease; }
     .btn-main:hover {
       transform: scale(1.05);
       background-color: #c92576;
@@ -76,48 +71,72 @@
 <body class="bg-gray-50 text-gray-900">
 
   <!-- TOP CONTACT BAR -->
-  <div class="bg-[var(--brand-blue)] text-white py-2 text-center text-lg font-semibold">
+  <div class="bg-[var(--brand-blue)] text-white py-2 text-center text-sm md:text-lg font-semibold">
     📞 07793 487 157 |
-    <a href="mailto:info@yorkshirerosecare.co.uk" class="underline hover:text-[var(--brand-pink)]">@ info@yorkshirerosecare.co.uk</a>
+    <a href="mailto:info@yorkshirerosecare.co.uk" class="underline hover:text-[var(--brand-pink)]">
+      @ info@yorkshirerosecare.co.uk
+    </a>
   </div>
 
   <!-- HEADER -->
   <header class="bg-white shadow-md border-b-4 border-[var(--brand-pink)] sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
 
       <div class="flex items-center space-x-3">
-        <img src="yrc-logo.jpg" alt="Yorkshire Rose Care Logo" class="h-16 drop-shadow-md">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-[var(--brand-pink)]">Yorkshire Rose Care</h1>
+        <img src="yrc-logo.jpg" alt="Yorkshire Rose Care Logo" class="h-14 md:h-16 drop-shadow-md">
+        <h1 class="text-2xl md:text-4xl font-extrabold text-[var(--brand-pink)]">
+          Yorkshire Rose Care
+        </h1>
       </div>
 
-      <nav class="hidden md:block space-x-6 text-lg font-semibold">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-lg font-semibold">
         <a href="#about" class="nav-link">About Us</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#values" class="nav-link">Values</a>
+        <a href="#team" class="nav-link">Team</a>
         <a href="#testimonials" class="nav-link">Testimonials</a>
         <a href="#partners" class="nav-link">Partners</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
+      <!-- Mobile Hamburger -->
+      <button id="menuToggle"
+              class="md:hidden text-[var(--brand-blue)] border border-[var(--brand-blue)] rounded-md px-3 py-1 text-lg font-bold">
+        ☰
+      </button>
     </div>
+
+    <!-- Mobile Menu (slide-down) -->
+    <nav id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-3 flex flex-col space-y-2 text-base font-semibold">
+        <a href="#about" class="nav-link block">About Us</a>
+        <a href="#services" class="nav-link block">Services</a>
+        <a href="#values" class="nav-link block">Values</a>
+        <a href="#team" class="nav-link block">Team</a>
+        <a href="#testimonials" class="nav-link block">Testimonials</a>
+        <a href="#partners" class="nav-link block">Partners</a>
+        <a href="#contact" class="nav-link block">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="bg-[var(--brand-blue)] text-white py-24 px-6">
-    <div class="container mx-auto text-center max-w-4xl">
+  <!-- HERO -->
+  <section class="bg-[var(--brand-blue)] text-white py-20 md:py-28 px-4 md:px-6 text-center">
+    <div class="container mx-auto max-w-4xl">
 
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 opacity-0 animate-title">
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-6 opacity-0 animate-title">
         Yorkshire Support Delivered With Heart
       </h2>
 
-      <p class="text-xl md:text-2xl mb-8 opacity-0 animate-lead leading-relaxed">
-        At Yorkshire Rose Care, we believe every person deserves compassion, dignity and the chance to live a fulfilling life.
-        Our support is rooted in warmth, respect and a genuine commitment to empowering individuals across West Yorkshire.
-        We’re here to walk alongside people, helping them build confidence, independence and hope for the future.
+      <p class="text-lg md:text-2xl mb-8 opacity-0 animate-lead leading-relaxed">
+        At Yorkshire Rose Care, we believe everyone deserves compassion, dignity and the chance to live a fulfilling life.
+        Our support is rooted in warmth, respect and the genuine Yorkshire spirit of standing by one another.
+        We empower individuals across West Yorkshire to grow in confidence, independence and wellbeing every day.
       </p>
 
       <a href="#contact"
-         class="inline-block bg-[var(--brand-pink)] px-10 py-4 rounded-xl text-xl font-semibold shadow-lg opacity-0 animate-btn btn-main">
+         class="inline-block bg-[var(--brand-pink)] px-8 md:px-10 py-4 rounded-xl text-lg md:text-xl font-semibold shadow-lg opacity-0 animate-btn btn-main">
         Get Support Today
       </a>
 
@@ -125,48 +144,50 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="container mx-auto px-6 py-20">
-    <div class="bg-[var(--brand-pink)] text-white p-10 rounded-2xl shadow-xl leading-relaxed card-float">
+  <section id="about" class="container mx-auto px-4 md:px-6 py-16 md:py-20">
+    <div class="bg-[var(--brand-pink)] text-white p-8 md:p-10 rounded-2xl shadow-xl leading-relaxed card-float">
 
-      <h2 class="text-4xl font-bold mb-6 text-center">About Us</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">About Us</h2>
 
-      <p class="text-lg mb-4">
-        Yorkshire Rose Care was created with a deep passion for supporting individuals with mental health needs and learning disabilities.
-        Our service was founded on compassion, community spirit and the belief that everyone deserves opportunity, independence and a sense of belonging.
+      <p class="text-base md:text-lg mb-4">
+        Yorkshire Rose Care was created with a deep passion for supporting adults with mental health needs and learning
+        disabilities. Our foundation is built on compassion, integrity and genuine community values that define the Yorkshire way.
       </p>
 
-      <p class="text-lg mb-4">
-        We work across West Yorkshire delivering personalised, holistic support that adapts to each person.
-        Whether it’s emotional wellbeing, daily living assistance or building community connections, we are committed to offering care that uplifts and empowers.
+      <p class="text-base md:text-lg mb-4">
+        We deliver personalised, empowering support that adapts to each person. Whether it’s emotional wellbeing, independent
+        living skills or community engagement, we focus on dignity, respect and meaningful outcomes.
       </p>
 
-      <p class="text-lg">
-        Our mission is simple — help people live well, live safely and live with dignity.
+      <p class="text-base md:text-lg">
+        Our mission is simple — help people live well, live safely and live with confidence.
       </p>
 
     </div>
   </section>
 
   <!-- VALUES -->
-  <section id="values" class="bg-white py-20 px-6">
+  <section id="values" class="bg-white py-16 md:py-20 px-4 md:px-6">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12 text-[var(--brand-blue)]">Our Values</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--brand-blue)]">
+        Our Values
+      </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
-        <div class="p-8 rounded-2xl shadow-xl bg-[var(--brand-blue)] text-white card-float">
-          <h3 class="text-3xl font-bold mb-3">Proud</h3>
-          <p>We take pride in the people we support and the communities that make Yorkshire special.</p>
+        <div class="p-6 md:p-8 rounded-2xl shadow-xl bg-[var(--brand-blue)] text-white card-float animate-fade">
+          <h3 class="text-2xl md:text-3xl font-bold mb-3">Proud</h3>
+          <p>We are proud of the people we support and honoured to serve communities across Yorkshire.</p>
         </div>
 
-        <div class="p-8 rounded-2xl shadow-xl bg-[var(--brand-pink)] text-white card-float">
-          <h3 class="text-3xl font-bold mb-3">Resilient</h3>
-          <p>We stand by people through challenges with strength, understanding and unwavering commitment.</p>
+        <div class="p-6 md:p-8 rounded-2xl shadow-xl bg-[var(--brand-pink)] text-white card-float animate-fade">
+          <h3 class="text-2xl md:text-3xl font-bold mb-3">Resilient</h3>
+          <p>We stand beside people through challenges with strength, empathy and stability.</p>
         </div>
 
-        <div class="p-8 rounded-2xl shadow-xl bg-[var(--brand-blue)] text-white card-float">
-          <h3 class="text-3xl font-bold mb-3">Committed</h3>
-          <p>We are dedicated to delivering safe, high-quality care that creates real and lasting change.</p>
+        <div class="p-6 md:p-8 rounded-2xl shadow-xl bg-[var(--brand-blue)] text-white card-float animate-fade">
+          <h3 class="text-2xl md:text-3xl font-bold mb-3">Committed</h3>
+          <p>We are dedicated to delivering safe, high-quality care that creates lasting change.</p>
         </div>
 
       </div>
@@ -174,52 +195,52 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="bg-[var(--brand-blue)] py-20 px-6 text-white">
+  <section id="services" class="bg-[var(--brand-blue)] py-16 md:py-20 px-4 md:px-6 text-white">
     <div class="container mx-auto">
 
-      <h2 class="text-4xl font-bold text-center mb-12">What We Offer</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What We Offer</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
-        <!-- DOMICILIARY CARE -->
-        <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)] card-float">
-          <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4">Domiciliary Care</h3>
+        <!-- DOM CARE -->
+        <div class="bg-white text-gray-900 p-6 md:p-8 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)] card-float animate-fade">
+          <h3 class="text-xl md:text-2xl font-bold text-[var(--brand-blue)] mb-4">Domiciliary Care</h3>
           <p class="mb-4">
-            We provide personalised home-based support that helps individuals remain safe, comfortable and independent
-            in their own homes. From daily living tasks to emotional reassurance, we tailor support to each person's unique needs.
+            We provide personalised home support that helps people remain independent and safe. Support includes daily
+            living tasks, routines, emotional reassurance and tailored independence plans.
           </p>
           <p>
-            Our approach focuses on dignity, respect and meaningful engagement, ensuring people feel empowered and supported every step of the way.
+            Everything we do is based on dignity, respect and meaningful engagement — empowering people at every step.
           </p>
         </div>
 
         <!-- SUPPORTED LIVING -->
-        <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)] card-float">
-          <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4">Supported Living</h3>
+        <div class="bg-white text-gray-900 p-6 md:p-8 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)] card-float animate-fade">
+          <h3 class="text-xl md:text-2xl font-bold text-[var(--brand-blue)] mb-4">Supported Living</h3>
           <p class="mb-4">
-            Through structured, flexible support, we help individuals develop life skills, build confidence and maintain a stable living environment.
-            Our focus is always on independence and personal choice.
+            Through structured and flexible support, we help individuals develop skills, build confidence and maintain
+            independence in a stable environment shaped around personal choice.
           </p>
           <p>
-            We work closely with each person to provide the tools, encouragement and opportunities needed to thrive in their community.
+            Our supported living ethos promotes community participation, growth and a strong sense of belonging.
           </p>
         </div>
 
-        <!-- SPECIALIST SUPPORT -->
-        <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)] card-float">
-          <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4">Specialist Support</h3>
+        <!-- SPECIALIST -->
+        <div class="bg-white text-gray-900 p-6 md:p-8 rounded-2xl shadow-xl border-4 border-[var(--brand-pink)] card-float animate-fade">
+          <h3 class="text-xl md:text-2xl font-bold text-[var(--brand-blue)] mb-4">Specialist Support</h3>
           <p class="mb-4">
-            Our specialist support is designed for those with complex needs, mental health conditions or learning disabilities.
-            We use trauma-informed, compassionate approaches that help people build resilience and emotional wellbeing.
+            For individuals with complex needs, our trauma-informed, person-centred approach builds resilience,
+            communication skills and emotional wellbeing.
           </p>
           <p>
-            Every support plan is personalised and strengths-based, promoting recovery, communication skills and meaningful community engagement.
+            Each support plan is personalised and strengths-focused, promoting recovery and meaningful development.
           </p>
         </div>
 
       </div>
 
-      <!-- SINGLE GET IN TOUCH BUTTON -->
+      <!-- GET IN TOUCH -->
       <div class="text-center mt-12">
         <a href="#contact"
            class="inline-block bg-[var(--brand-pink)] px-10 py-4 rounded-xl text-xl font-semibold shadow-lg btn-main">
@@ -230,50 +251,119 @@
     </div>
   </section>
 
+  <!-- MEET THE TEAM -->
+  <section id="team" class="bg-white py-16 md:py-20 px-4 md:px-6">
+    <div class="container mx-auto">
+
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--brand-blue)]">
+        Meet the Team
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+
+        <!-- ROBERT -->
+        <div class="bg-[var(--brand-pink)] text-white p-6 md:p-8 rounded-2xl shadow-xl card-float animate-fade">
+          <h3 class="text-2xl md:text-3xl font-bold mb-2">Robert Cranmer</h3>
+          <p class="text-lg font-semibold mb-4">Director</p>
+
+          <p class="mb-4">
+            Robert has over 15 years of care management experience and is recognised for his commitment to improving
+            outcomes across the region.
+          </p>
+          <p class="mb-4">
+            With a strong passion for mental health, he also serves as the Designated Safeguarding Lead ensuring the
+            highest safety standards.
+          </p>
+          <p>
+            A proud Bradford City fan and devoted family man, Robert brings warmth and leadership to the organisation.
+          </p>
+        </div>
+
+        <!-- SALMAN -->
+        <div class="bg-[var(--brand-blue)] text-white p-6 md:p-8 rounded-2xl shadow-xl card-float animate-fade">
+          <h3 class="text-2xl md:text-3xl font-bold mb-2">Salman Khan</h3>
+          <p class="text-lg font-semibold mb-4">Director</p>
+
+          <p class="mb-4">
+            Salman is passionate about delivering outstanding care to individuals with learning disabilities, autism
+            and mental health challenges.
+          </p>
+          <p class="mb-4">
+            His leadership ensures Yorkshire Rose Care remains compassionate, person-centred and community focused.
+          </p>
+          <p>
+            Outside of work, Salman enjoys spending time with family and friends.
+          </p>
+        </div>
+
+        <!-- SUPPORT WORKERS -->
+        <div class="bg-[var(--brand-pink)] text-white p-6 md:p-8 rounded-2xl shadow-xl card-float animate-fade">
+          <h3 class="text-2xl md:text-3xl font-bold mb-2">Support Workers</h3>
+          <p class="text-lg font-semibold mb-4">Our Frontline Team</p>
+
+          <p class="mb-4">
+            Our support workers provide daily person-centred assistance, helping individuals build independence,
+            confidence and essential life skills.
+          </p>
+          <p class="mb-4">
+            They promote wellbeing, encourage community involvement and ensure individuals feel heard, valued and supported.
+          </p>
+          <p>
+            Compassionate, patient and dedicated — they make a meaningful difference every single day.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="bg-white py-20 px-6">
+  <section id="testimonials" class="bg-white py-16 md:py-20 px-4 md:px-6">
     <div class="container mx-auto max-w-5xl text-center">
 
-      <h2 class="text-4xl font-bold text-[var(--brand-blue)] mb-12">Testimonials</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-blue)] mb-12">
+        Testimonials
+      </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
         <div class="bg-[var(--brand-pink)] text-white p-8 rounded-2xl shadow-xl">
-          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative bubble">
-            <p class="text-lg italic font-semibold">
-              "Yorkshire Rose Care changed my life. The team helped me rebuild my confidence and supported me through difficult moments."
+          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
+            <p class="text-base md:text-lg italic font-semibold">
+              "Yorkshire Rose Care changed my life. They helped me rebuild confidence and supported me through difficult times."
             </p>
-            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
+            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 -translate-x-1/2"></div>
           </div>
           <p class="mt-6 font-bold text-xl">Service User</p>
         </div>
 
         <div class="bg-[var(--brand-blue)] text-white p-8 rounded-2xl shadow-xl">
-          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative bubble">
-            <p class="text-lg italic font-semibold">
-              "The support workers are kind, patient and understanding. They always go above and beyond to help."
+          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
+            <p class="text-base md:text-lg italic font-semibold">
+              "The support workers are kind, patient and understanding. They always go above and beyond."
             </p>
-            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
+            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 -translate-x-1/2"></div>
           </div>
           <p class="mt-6 font-bold text-xl">Family Member</p>
         </div>
 
         <div class="bg-[var(--brand-pink)] text-white p-8 rounded-2xl shadow-xl">
-          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative bubble">
-            <p class="text-lg italic font-semibold">
-              "Support that makes a real difference. The team are reliable, friendly and genuinely committed to helping people."
+          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
+            <p class="text-base md:text-lg italic font-semibold">
+              "Support that makes a real difference. The team are reliable and genuinely committed."
             </p>
-            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
+            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 -translate-x-1/2"></div>
           </div>
           <p class="mt-6 font-bold text-xl">Health Professional</p>
         </div>
 
         <div class="bg-[var(--brand-blue)] text-white p-8 rounded-2xl shadow-xl">
-          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative bubble">
-            <p class="text-lg italic font-semibold">
+          <div class="bg-white text-gray-900 p-6 rounded-xl shadow-lg relative">
+            <p class="text-base md:text-lg italic font-semibold">
               "I feel safe and supported. Yorkshire Rose Care listen to me and help me take positive steps every day."
             </p>
-            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 transform -translate-x-1/2"></div>
+            <div class="w-0 h-0 border-t-[20px] border-t-white border-l-[20px] border-l-transparent absolute -bottom-5 left-1/2 -translate-x-1/2"></div>
           </div>
           <p class="mt-6 font-bold text-xl">Service User</p>
         </div>
@@ -283,45 +373,45 @@
   </section>
 
   <!-- PARTNERS -->
-  <section id="partners" class="container mx-auto px-6 py-20">
-    <h2 class="text-4xl font-bold text-[var(--brand-blue)] text-center mb-8">
+  <section id="partners" class="container mx-auto px-4 md:px-6 py-16 md:py-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-blue)] text-center mb-8">
       Our Partners
     </h2>
 
-    <p class="text-center max-w-4xl mx-auto text-lg mb-12 text-gray-700">
-      We work with local and national organisations who share our commitment to improving mental health, reducing stigma,
-      promoting inclusion and supporting community wellbeing across Yorkshire.
+    <p class="text-center max-w-4xl mx-auto text-base md:text-lg mb-12 text-gray-700">
+      We work with organisations who share our commitment to mental health, community wellbeing and inclusion.
+      Together, we promote awareness, reduce stigma and create opportunities across Yorkshire.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
       <a href="https://www.bradfordcitycf.org.uk" target="_blank"
-         class="partner-card p-8 rounded-2xl bg-[var(--brand-pink)] text-white font-bold text-xl shadow-xl text-center">
+         class="partner-card p-8 rounded-2xl bg-[var(--brand-pink)] text-white font-bold text-lg md:text-xl shadow-xl text-center">
         Bradford City Community Foundation
       </a>
 
       <a href="https://www.rugbyleaguecares.org" target="_blank"
-         class="partner-card p-8 rounded-2xl bg-[var(--brand-blue)] text-white font-bold text-xl shadow-xl text-center">
+         class="partner-card p-8 rounded-2xl bg-[var(--brand-blue)] text-white font-bold text-lg md:text-xl shadow-xl text-center">
         Rugby League Cares
       </a>
 
       <a href="https://www.mindinbradford.org.uk" target="_blank"
-         class="partner-card p-8 rounded-2xl bg-[var(--brand-pink)] text-white font-bold text-xl shadow-xl text-center">
+         class="partner-card p-8 rounded-2xl bg-[var(--brand-pink)] text-white font-bold text-lg md:text-xl shadow-xl text-center">
         Mind in Bradford
       </a>
 
       <a href="https://www.samaritans.org" target="_blank"
-         class="partner-card p-8 rounded-2xl bg-[var(--brand-blue)] text-white font-bold text-xl shadow-xl text-center">
+         class="partner-card p-8 rounded-2xl bg-[var(--brand-blue)] text-white font-bold text-lg md:text-xl shadow-xl text-center">
         Samaritans
       </a>
 
       <a href="https://andysmanclub.co.uk" target="_blank"
-         class="partner-card p-8 rounded-2xl bg-[var(--brand-pink)] text-white font-bold text-xl shadow-xl text-center">
+         class="partner-card p-8 rounded-2xl bg-[var(--brand-pink)] text-white font-bold text-lg md:text-xl shadow-xl text-center">
         Andy’s Man Club
       </a>
 
       <a href="https://www.premierleague.com/communities" target="_blank"
-         class="partner-card p-8 rounded-2xl bg-[var(--brand-blue)] text-white font-bold text-xl shadow-xl text-center">
+         class="partner-card p-8 rounded-2xl bg-[var(--brand-blue)] text-white font-bold text-lg md:text-xl shadow-xl text-center">
         Premier League Foundation
       </a>
 
@@ -329,13 +419,13 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="bg-[var(--brand-pink)] py-20 px-6 text-white">
+  <section id="contact" class="bg-[var(--brand-pink)] py-16 md:py-20 px-4 md:px-6 text-white">
     <div class="container mx-auto max-w-3xl">
 
-      <h2 class="text-4xl font-bold text-center mb-10">Contact Us</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Contact Us</h2>
 
       <form action="https://formspree.io/f/xnnegodr" method="POST"
-            class="bg-white text-gray-900 p-8 rounded-2xl shadow-xl border-4 border-[var(--brand-blue)]">
+            class="bg-white text-gray-900 p-6 md:p-8 rounded-2xl shadow-xl border-4 border-[var(--brand-blue)]">
 
         <label class="block mb-6">
           <span class="text-lg font-semibold text-[var(--brand-blue)]">Full Name</span>
@@ -363,12 +453,15 @@
       </form>
 
       <div class="text-center mt-10">
-        <img src="cqc-logo.png" class="mx-auto h-20 mb-4" alt="CQC Logo">
+        <img src="cqc-logo.png" class="mx-auto h-16 md:h-20 mb-4" alt="CQC Logo">
+
         <a href="https://www.cqc.org.uk"
-           class="font-bold text-xl underline text-white" target="_blank">Visit our CQC Page</a>
+           class="font-bold text-lg md:text-xl underline text-white" target="_blank">
+          Visit our CQC Page
+        </a>
       </div>
 
-      <div class="mt-10 text-center leading-relaxed text-lg">
+      <div class="mt-10 text-center leading-relaxed text-base md:text-lg">
         <p class="font-bold">BizSpace Business Centre</p>
         <p>Knowles Ln, Dudley Hill, Bradford BD4 9SW</p>
         <p class="font-semibold mt-2">Tel: 07793 487 157</p>
@@ -377,6 +470,31 @@
 
     </div>
   </section>
+
+  <!-- FLOATING REFER SOMEONE BUTTON -->
+  <a href="#contact"
+     class="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-[var(--brand-pink)] text-white px-4 md:px-6 py-3 rounded-full shadow-2xl text-sm md:text-base font-semibold btn-main z-50">
+    Refer Someone
+  </a>
+
+  <!-- SIMPLE MOBILE MENU TOGGLE SCRIPT -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when a link is clicked
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
 
 </body>
 </html>
