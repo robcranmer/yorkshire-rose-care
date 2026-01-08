@@ -64,11 +64,11 @@
         radial-gradient(900px 500px at 90% 10%, rgba(255,255,255,0.10), transparent 60%);
     }
 
-    /* Soft tints (breaks up blocks while staying on brand) */
+    /* Soft tints */
     .tint-blue{ background: linear-gradient(180deg, rgba(13,59,102,0.10), rgba(255,255,255,0)); }
     .tint-pink{ background: linear-gradient(180deg, rgba(229,72,154,0.10), rgba(255,255,255,0)); }
 
-    /* Speech bubble styling */
+    /* Speech bubble styling (for ambassador quote) */
     .speech{
       position: relative;
       border-radius: 1.25rem;
@@ -76,13 +76,13 @@
     .speech:after{
       content:"";
       position:absolute;
-      left: 88px;
+      left: 96px;
       bottom: -14px;
       width: 0;
       height: 0;
       border: 14px solid transparent;
-      border-top-color: rgba(255,255,255,0.92);
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.10));
+      border-top-color: rgba(255,255,255,0.14);
+      filter: drop-shadow(0 10px 14px rgba(0,0,0,0.25));
     }
     @media (max-width: 768px){
       .speech:after{
@@ -348,36 +348,50 @@
   <!-- Divider -->
   <div class="container mx-auto px-4 md:px-6"><div class="soft-divider"></div></div>
 
-  <!-- AMBASSADOR (Dominic Brunt) -->
-  <section id="ambassador" class="tint-blue py-16 md:py-20 px-4 md:px-6">
-    <div class="container mx-auto max-w-5xl surface rounded-3xl p-6 md:p-10 shadow-xl border border-white/40">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[var(--brand-blue)] section-title">
-        Ambassador
-      </h2>
+  <!-- AMBASSADOR (Dominic Brunt) - BLUE SECTION -->
+  <section id="ambassador" class="bg-[var(--brand-blue)] text-white py-16 md:py-20 px-4 md:px-6 hero-grad">
+    <div class="container mx-auto max-w-6xl">
+      <div class="flex flex-col items-center text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold section-title">Ambassador</h2>
+        <p class="mt-3 text-white/85 text-base md:text-lg font-semibold">
+          Proudly supported by Dominic Brunt
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 items-center">
-        <div class="text-center md:text-left">
-          <img
-            src="https://raw.githubusercontent.com/robcranmer/yorkshire-rose-care/main/dom1.jpg"
-            alt="Dominic Brunt"
-            class="w-36 h-36 md:w-40 md:h-40 rounded-full object-cover shadow-2xl border-4 border-white mx-auto md:mx-0"
-            loading="lazy"
-          />
-          <p class="mt-4 font-extrabold text-[var(--brand-blue)] text-lg">Dominic Brunt</p>
-          <p class="text-gray-700 font-semibold">Emmerdale Actor</p>
+      <div class="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 items-center">
+        <!-- Image block -->
+        <div class="relative">
+          <div class="absolute -inset-5 rounded-3xl bg-white/10 blur-2xl"></div>
+          <div class="relative rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl">
+            <img
+              src="https://raw.githubusercontent.com/robcranmer/yorkshire-rose-care/main/dom1.jpg"
+              alt="Dominic Brunt"
+              class="w-full h-[340px] md:h-[420px] object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="mt-5 flex items-center justify-center gap-3">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--brand-pink)]"></span>
+            <p class="text-lg font-extrabold">Dominic Brunt</p>
+            <span class="text-white/70 font-semibold">• Emmerdale Actor</span>
+          </div>
         </div>
 
-        <div class="speech bg-white/92 text-gray-900 p-6 md:p-8 shadow-2xl border border-white/60">
-          <p class="text-lg md:text-xl italic leading-relaxed">
-            “The importance of specialist support for individuals with Mental Health, Learning Disabilities or Autism is significant to the future of our country,
-            Robert and the team at Yorkshire Rose Care demonstrate their commitment and dedication to those in need and live by their values”
+        <!-- Quote bubble -->
+        <div class="speech bg-white/14 border border-white/25 p-7 md:p-9 shadow-2xl">
+          <p class="text-lg md:text-xl italic leading-relaxed text-white">
+            “The importance of specialist support for individuals with Mental Health, Learning Disabilities or Autism is significant to the future of our country.
+            When my Emmerdale character experienced mental health difficulties, that’s when I got to know Robert.
+            Robert and the team at Yorkshire Rose Care demonstrate their commitment and dedication to those in need and live by their values.”
           </p>
-          <div class="mt-5 flex items-center justify-between flex-wrap gap-3">
-            <span class="inline-flex items-center gap-2 font-bold text-[var(--brand-pink)]">
+
+          <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="inline-flex items-center gap-2 font-bold text-white">
               <span class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--brand-pink)]"></span>
               Yorkshire Rose Care Ambassador
             </span>
-            <span class="text-sm text-gray-600 font-semibold">— Dominic Brunt</span>
+            <span class="text-sm text-white/80 font-semibold">— Dominic Brunt</span>
           </div>
         </div>
       </div>
