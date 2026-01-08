@@ -49,7 +49,6 @@
       <h1 class="text-2xl md:text-4xl font-extrabold text-[var(--brand-pink)]">Yorkshire Rose Care</h1>
     </div>
 
-    <!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-6 text-lg font-semibold">
       <a href="#about" class="nav-link">About Us</a>
       <a href="#services" class="nav-link">Services</a>
@@ -60,14 +59,12 @@
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <!-- Mobile Hamburger -->
     <button id="menuToggle"
       class="md:hidden text-[var(--brand-blue)] border border-[var(--brand-blue)] rounded-md px-3 py-1 text-lg font-bold">
       ☰
     </button>
   </div>
 
-  <!-- Mobile Menu -->
   <nav id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
     <div class="px-4 py-3 flex flex-col space-y-2 text-base font-semibold">
       <a href="#about" class="nav-link block">About Us</a>
@@ -152,11 +149,12 @@
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--brand-blue)]">Meet the Team</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+
       <div class="bg-[var(--brand-pink)] text-white p-6 md:p-8 rounded-2xl shadow-xl card-float border-4 border-[var(--brand-blue)]">
         <h3 class="text-2xl md:text-3xl font-bold mb-2">Robert Cranmer</h3>
         <p class="text-lg font-semibold mb-4">Director</p>
         <p class="mb-4">Robert has over 15 years of care management experience across the region and is known for driving quality and improving outcomes.</p>
-        <p class="mb-4">He is the Designated Safeguarding Lead, ensuring the highest safety and protection standards.</p>
+        <p class="mb-4">He is the Designated Safeguarding Lead, ensuring the highest safety standards.</p>
         <p>A proud Bradford City fan and founder of the organisation recognised for his commitment to mental health across Yorkshire.</p>
       </div>
 
@@ -175,25 +173,129 @@
         <p class="mb-4">They promote independence, emotional wellbeing and community engagement, always led by the person’s goals and choices.</p>
         <p>Compassionate, patient and dedicated, making a difference every day.</p>
       </div>
+
     </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" class="container mx-auto px-4 md:px-6 py-16 md:py-20">
+  <h2 class="text-3xl md:text-4xl font-bold text-[var(--brand-blue)] text-center mb-8">Our Partners</h2>
+
+  <p class="text-center max-w-4xl mx-auto text-base md:text-lg mb-12 text-gray-700">
+    We are proud to collaborate with organisations that champion mental health, inclusion and community wellbeing across Yorkshire.
+    These partnerships reflect shared values, promoting support networks, reducing stigma and improving outcomes for people and communities.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+
+    <a href="https://www.bradfordcitycf.org.uk" target="_blank"
+       class="block p-8 rounded-2xl bg-[var(--brand-pink)] text-white shadow-xl text-center border-4 border-[var(--brand-blue)] card-float">
+      <h3 class="text-xl md:text-2xl font-bold mb-2">Bradford City Community Foundation</h3>
+      <p class="text-sm opacity-95">Community programmes supporting wellbeing, confidence and inclusion through sport and outreach.</p>
+    </a>
+
+    <a href="https://www.rugbyleaguecares.org" target="_blank"
+       class="block p-8 rounded-2xl bg-[var(--brand-blue)] text-white shadow-xl text-center border-4 border-[var(--brand-pink)] card-float">
+      <h3 class="text-xl md:text-2xl font-bold mb-2">Rugby League Cares</h3>
+      <p class="text-sm opacity-95">Wellbeing initiatives promoting positive mental health, resilience and community connection.</p>
+    </a>
+
+    <a href="https://www.mindinbradford.org.uk" target="_blank"
+       class="block p-8 rounded-2xl bg-[var(--brand-pink)] text-white shadow-xl text-center border-4 border-[var(--brand-blue)] card-float">
+      <h3 class="text-xl md:text-2xl font-bold mb-2">Mind in Bradford</h3>
+      <p class="text-sm opacity-95">Local mental health support, crisis services and wellbeing activities across Bradford.</p>
+    </a>
+
+    <a href="https://www.samaritans.org" target="_blank"
+       class="block p-8 rounded-2xl bg-[var(--brand-blue)] text-white shadow-xl text-center border-4 border-[var(--brand-pink)] card-float">
+      <h3 class="text-xl md:text-2xl font-bold mb-2">Samaritans</h3>
+      <p class="text-sm opacity-95">Emotional support for anyone experiencing distress, a vital part of prevention and recovery.</p>
+    </a>
+
+    <a href="https://andysmanclub.co.uk" target="_blank"
+       class="block p-8 rounded-2xl bg-[var(--brand-pink)] text-white shadow-xl text-center border-4 border-[var(--brand-blue)] card-float">
+      <h3 class="text-xl md:text-2xl font-bold mb-2">Andy’s Man Club</h3>
+      <p class="text-sm opacity-95">Peer support spaces helping men talk openly, reduce isolation and improve mental wellbeing.</p>
+    </a>
+
+    <a href="https://www.bradfordhospitalscharity.org" target="_blank"
+       class="block p-8 rounded-2xl bg-[var(--brand-blue)] text-white shadow-xl text-center border-4 border-[var(--brand-pink)] card-float">
+      <h3 class="text-xl md:text-2xl font-bold mb-2">Bradford Hospitals Charity</h3>
+      <p class="text-sm opacity-95">Supporting hospital services and patient wellbeing through charitable funding and community action.</p>
+    </a>
+
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="bg-[var(--brand-pink)] py-16 md:py-20 px-4 md:px-6 text-white">
-  <div class="container mx-auto max-w-3xl text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact Us</h2>
-    <p class="text-lg">📞 01274 449277</p>
-    <p class="text-lg">📧 info@yorkshirerosecare.co.uk</p>
+  <div class="container mx-auto max-w-3xl">
+
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Contact Us</h2>
+
+    <form action="https://formspree.io/f/xnnegodr" method="POST"
+          class="bg-white text-gray-900 p-6 md:p-8 rounded-2xl shadow-xl border-4 border-[var(--brand-blue)] card-float">
+
+      <label class="block mb-6">
+        <span class="text-lg font-semibold text-[var(--brand-blue)]">Full Name</span>
+        <input type="text" name="name" required
+               class="w-full mt-2 p-3 border-2 border-[var(--brand-blue)] rounded-lg focus:ring-2 focus:ring-[var(--brand-pink)]">
+      </label>
+
+      <label class="block mb-6">
+        <span class="text-lg font-semibold text-[var(--brand-blue)]">Email</span>
+        <input type="email" name="_replyto" required
+               class="w-full mt-2 p-3 border-2 border-[var(--brand-blue)] rounded-lg focus:ring-2 focus:ring-[var(--brand-pink)]">
+      </label>
+
+      <label class="block mb-6">
+        <span class="text-lg font-semibold text-[var(--brand-blue)]">Message</span>
+        <textarea name="message" rows="5" required
+                  class="w-full mt-2 p-3 border-2 border-[var(--brand-blue)] rounded-lg focus:ring-2 focus:ring-[var(--brand-pink)]"></textarea>
+      </label>
+
+      <button type="submit" class="bg-[var(--brand-blue)] text-white w-full py-3 rounded-lg text-lg font-bold btn-main">
+        Send Message
+      </button>
+    </form>
+
+    <div class="text-center mt-10">
+      <img src="cqc-logo.png" class="mx-auto h-16 md:h-20 mb-4" alt="CQC Logo">
+      <a href="https://www.cqc.org.uk" target="_blank" class="font-bold text-lg md:text-xl underline text-white">
+        Visit our CQC Page
+      </a>
+    </div>
+
+    <div class="mt-10 text-center leading-relaxed text-base md:text-lg">
+      <p class="font-bold">Oakwood Court</p>
+      <p>City Road, Bradford, BD8 8JY</p>
+      <p class="font-semibold mt-2">Tel: 01274 449277</p>
+    </div>
+
   </div>
 </section>
 
+<!-- FLOATING REFER SOMEONE BUTTON -->
+<a href="#contact"
+   class="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-[var(--brand-blue)] text-white px-4 md:px-6 py-3 rounded-full shadow-2xl text-sm md:text-base font-semibold btn-main z-50">
+  Refer Someone
+</a>
+
+<!-- MOBILE MENU SCRIPT -->
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
+
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
     });
   }
 </script>
