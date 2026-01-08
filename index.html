@@ -49,6 +49,7 @@
       <h1 class="text-2xl md:text-4xl font-extrabold text-[var(--brand-pink)]">Yorkshire Rose Care</h1>
     </div>
 
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-6 text-lg font-semibold">
       <a href="#about" class="nav-link">About Us</a>
       <a href="#services" class="nav-link">Services</a>
@@ -59,12 +60,14 @@
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
+    <!-- Mobile Hamburger -->
     <button id="menuToggle"
       class="md:hidden text-[var(--brand-blue)] border border-[var(--brand-blue)] rounded-md px-3 py-1 text-lg font-bold">
       ☰
     </button>
   </div>
 
+  <!-- Mobile Menu -->
   <nav id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
     <div class="px-4 py-3 flex flex-col space-y-2 text-base font-semibold">
       <a href="#about" class="nav-link block">About Us</a>
@@ -143,18 +146,17 @@
   </div>
 </section>
 
-<!-- TEAM (ORIGINAL FORMAT) -->
+<!-- TEAM -->
 <section id="team" class="bg-white py-16 md:py-20 px-4 md:px-6">
   <div class="container mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--brand-blue)]">Meet the Team</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-
       <div class="bg-[var(--brand-pink)] text-white p-6 md:p-8 rounded-2xl shadow-xl card-float border-4 border-[var(--brand-blue)]">
         <h3 class="text-2xl md:text-3xl font-bold mb-2">Robert Cranmer</h3>
         <p class="text-lg font-semibold mb-4">Director</p>
         <p class="mb-4">Robert has over 15 years of care management experience across the region and is known for driving quality and improving outcomes.</p>
-        <p class="mb-4">He is the Designated Safeguarding Lead, ensuring the highest safety standards.</p>
+        <p class="mb-4">He is the Designated Safeguarding Lead, ensuring the highest safety and protection standards.</p>
         <p>A proud Bradford City fan and founder of the organisation recognised for his commitment to mental health across Yorkshire.</p>
       </div>
 
@@ -173,7 +175,6 @@
         <p class="mb-4">They promote independence, emotional wellbeing and community engagement, always led by the person’s goals and choices.</p>
         <p>Compassionate, patient and dedicated, making a difference every day.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -190,8 +191,10 @@
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
-  if(menuToggle && mobileMenu){
-    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
   }
 </script>
 
