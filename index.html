@@ -9,11 +9,10 @@
   <style>
     :root { --brand-blue:#0d3b66; --brand-pink:#e5489a; }
 
-    body {
+    /* Textured background throughout (premium, subtle, consistent) */
+    body{
       font-family: Arial, sans-serif;
       scroll-behavior:smooth;
-
-      /* More “premium” background: soft colour wash + subtle texture */
       background-color:#f7f8fb;
       background-image:
         radial-gradient(1100px 650px at 8% -10%, rgba(229,72,154,0.16), transparent 60%),
@@ -23,14 +22,12 @@
       background-attachment: fixed;
     }
 
-    /* Classy section surface (consistent “carded” feel without changing content) */
-    .surface {
-      background: rgba(255,255,255,0.82);
+    .surface{
+      background: rgba(255,255,255,0.84);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
 
-    /* Subtle dividers to break up sections */
     .soft-divider{
       height: 1px;
       background-image: linear-gradient(to right, rgba(13,59,102,0.08), rgba(229,72,154,0.18), rgba(13,59,102,0.08));
@@ -58,24 +55,40 @@
     .x-btn{ transition:0.25s ease; }
     .x-btn:hover{ transform:scale(1.08); box-shadow:0 10px 22px rgba(0,0,0,0.25); }
 
-    /* Consistent section headers */
-    .section-title{
-      letter-spacing: -0.01em;
-    }
+    .section-title{ letter-spacing:-0.01em; }
 
-    /* Hero gradient overlay to soften large blue block */
+    /* Hero gradient overlay */
     .hero-grad{
       background-image:
         radial-gradient(900px 500px at 20% 20%, rgba(229,72,154,0.20), transparent 60%),
         radial-gradient(900px 500px at 90% 10%, rgba(255,255,255,0.10), transparent 60%);
     }
 
-    /* Alternating “brand-tint” sections (breaks blue/pink blocks while keeping brand colours) */
-    .tint-blue{
-      background: linear-gradient(180deg, rgba(13,59,102,0.10), rgba(255,255,255,0.0));
+    /* Soft tints (breaks up blocks while staying on brand) */
+    .tint-blue{ background: linear-gradient(180deg, rgba(13,59,102,0.10), rgba(255,255,255,0)); }
+    .tint-pink{ background: linear-gradient(180deg, rgba(229,72,154,0.10), rgba(255,255,255,0)); }
+
+    /* Speech bubble styling */
+    .speech{
+      position: relative;
+      border-radius: 1.25rem;
     }
-    .tint-pink{
-      background: linear-gradient(180deg, rgba(229,72,154,0.10), rgba(255,255,255,0.0));
+    .speech:after{
+      content:"";
+      position:absolute;
+      left: 88px;
+      bottom: -14px;
+      width: 0;
+      height: 0;
+      border: 14px solid transparent;
+      border-top-color: rgba(255,255,255,0.92);
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.10));
+    }
+    @media (max-width: 768px){
+      .speech:after{
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   </style>
 </head>
@@ -195,7 +208,7 @@
   <!-- Divider -->
   <div class="container mx-auto px-4 md:px-6"><div class="soft-divider"></div></div>
 
-  <!-- ABOUT (kept content, updated section surface) -->
+  <!-- ABOUT -->
   <section id="about" class="tint-pink py-16 md:py-20">
     <div class="container mx-auto px-4 md:px-6">
       <div class="bg-[var(--brand-pink)] text-white p-8 md:p-10 rounded-2xl shadow-xl leading-relaxed card-float border-4 border-[var(--brand-blue)]">
@@ -218,7 +231,7 @@
     </div>
   </section>
 
-  <!-- VALUES (moved away from solid white/solid blocks) -->
+  <!-- VALUES -->
   <section id="values" class="tint-blue py-16 md:py-20 px-4 md:px-6">
     <div class="container mx-auto surface rounded-3xl p-6 md:p-10 shadow-xl border border-white/40">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--brand-blue)] section-title">Our Values</h2>
@@ -244,7 +257,7 @@
     </div>
   </section>
 
-  <!-- SERVICES (kept blue, but give it depth with overlay) -->
+  <!-- SERVICES -->
   <section id="services" class="bg-[var(--brand-blue)] py-16 md:py-20 px-4 md:px-6 text-white hero-grad">
     <div class="container mx-auto">
 
@@ -334,6 +347,42 @@
 
   <!-- Divider -->
   <div class="container mx-auto px-4 md:px-6"><div class="soft-divider"></div></div>
+
+  <!-- AMBASSADOR (Dominic Brunt) -->
+  <section id="ambassador" class="tint-blue py-16 md:py-20 px-4 md:px-6">
+    <div class="container mx-auto max-w-5xl surface rounded-3xl p-6 md:p-10 shadow-xl border border-white/40">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[var(--brand-blue)] section-title">
+        Ambassador
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 items-center">
+        <div class="text-center md:text-left">
+          <img
+            src="https://raw.githubusercontent.com/robcranmer/yorkshire-rose-care/main/dom1.jpg"
+            alt="Dominic Brunt"
+            class="w-36 h-36 md:w-40 md:h-40 rounded-full object-cover shadow-2xl border-4 border-white mx-auto md:mx-0"
+            loading="lazy"
+          />
+          <p class="mt-4 font-extrabold text-[var(--brand-blue)] text-lg">Dominic Brunt</p>
+          <p class="text-gray-700 font-semibold">Emmerdale Actor</p>
+        </div>
+
+        <div class="speech bg-white/92 text-gray-900 p-6 md:p-8 shadow-2xl border border-white/60">
+          <p class="text-lg md:text-xl italic leading-relaxed">
+            “The importance of specialist support for individuals with Mental Health, Learning Disabilities or Autism is significant to the future of our country,
+            Robert and the team at Yorkshire Rose Care demonstrate their commitment and dedication to those in need and live by their values”
+          </p>
+          <div class="mt-5 flex items-center justify-between flex-wrap gap-3">
+            <span class="inline-flex items-center gap-2 font-bold text-[var(--brand-pink)]">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--brand-pink)]"></span>
+              Yorkshire Rose Care Ambassador
+            </span>
+            <span class="text-sm text-gray-600 font-semibold">— Dominic Brunt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- TEAM -->
   <section id="team" class="tint-pink py-16 md:py-20 px-4 md:px-6">
@@ -488,7 +537,7 @@
     </div>
   </section>
 
-  <!-- CONTACT (kept content, consistent surface) -->
+  <!-- CONTACT -->
   <section id="contact" class="bg-[var(--brand-pink)] py-16 md:py-20 px-4 md:px-6 text-white hero-grad">
     <div class="container mx-auto max-w-3xl">
 
